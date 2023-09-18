@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxtod3cwsbfte"]
 
 [ext_resource type="Script" path="res://scripts/Laser.gd" id="1_xqui6"]
-[ext_resource type="Texture2D" uid="uid://c6dqyw7qaru7p" path="res://kenney space shooter assets/PNG/Lasers/laserRed04.png" id="2_g2dwq"]
+[ext_resource type="Texture2D" uid="uid://c6dqyw7qaru7p" path="res://assets/kenney space shooter assets/PNG/Lasers/laserRed04.png" id="2_yuvl6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gipw"]
 radius = 7.0
@@ -13,7 +13,7 @@ PROJECTILE_SPEED = 400.0
 metadata/_edit_group_ = true
 
 [node name="LaserGraphic" type="Sprite2D" parent="."]
-texture = ExtResource("2_g2dwq")
+texture = ExtResource("2_yuvl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2gipw")

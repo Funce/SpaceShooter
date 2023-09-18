@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bncuq48kltc7q"
+path="res://.godot/imported/sfx_lose.ogg-63c6ec7d768e69a240190ec9b9dabba5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney space shooter assets/Bonus/sfx_lose.ogg"
+dest_files=["res://.godot/imported/sfx_lose.ogg-63c6ec7d768e69a240190ec9b9dabba5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

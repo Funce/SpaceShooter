@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bakstkfpg63yd"]
 
-[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://space_background_by_westbeam.png" id="1_kndno"]
+[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://assets/space_background_by_westbeam.png" id="1_0bs27"]
 [ext_resource type="Script" path="res://scripts/StartButton.gd" id="2_anuvh"]
 [ext_resource type="PackedScene" uid="uid://8ecpp7c48mtk" path="res://main.tscn" id="3_4kcne"]
 
@@ -12,7 +12,7 @@ font_size = 50
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(269.5, 481)
 scale = Vector2(0.271973, 0.632813)
-texture = ExtResource("1_kndno")
+texture = ExtResource("1_0bs27")
 metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

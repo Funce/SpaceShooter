@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://8ecpp7c48mtk"]
 
-[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://space_background_by_westbeam.png" id="1_wof58"]
+[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://assets/space_background_by_westbeam.png" id="1_uyeye"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="2_iew4o"]
-[ext_resource type="Texture2D" uid="uid://c6v1dhmqj6ggs" path="res://kenney space shooter assets/PNG/Enemies/enemyRed3.png" id="2_oqryu"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="3_g7kvt"]
 [ext_resource type="PackedScene" uid="uid://dxtod3cwsbfte" path="res://prefabs/laser.tscn" id="4_k2r5d"]
+[ext_resource type="Texture2D" uid="uid://c6v1dhmqj6ggs" path="res://assets/kenney space shooter assets/PNG/Enemies/enemyRed3.png" id="5_r6n10"]
 [ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="6_6abkc"]
 [ext_resource type="PackedScene" uid="uid://caykiuhlew364" path="res://prefabs/enemy.tscn" id="7_7y5xw"]
 [ext_resource type="Script" path="res://scripts/ThisIsNotRight.gd" id="8_8g8bw"]
@@ -23,7 +23,7 @@ font_size = 45
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(269.5, 481)
 scale = Vector2(0.271973, 0.632813)
-texture = ExtResource("1_wof58")
+texture = ExtResource("1_uyeye")
 metadata/_edit_lock_ = true
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -44,7 +44,7 @@ metadata/_edit_group_ = true
 
 [node name="ShipGraphic" type="Sprite2D" parent="Player"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_oqryu")
+texture = ExtResource("5_r6n10")
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
