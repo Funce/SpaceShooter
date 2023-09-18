@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://8ecpp7c48mtk"]
+
+[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://space_background_by_westbeam.png" id="1_wof58"]
+[ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="2_iew4o"]
+[ext_resource type="Texture2D" uid="uid://c6v1dhmqj6ggs" path="res://kenney space shooter assets/PNG/Enemies/enemyRed3.png" id="2_oqryu"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="3_g7kvt"]
+[ext_resource type="PackedScene" uid="uid://dxtod3cwsbfte" path="res://prefabs/laser.tscn" id="4_k2r5d"]
+[ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="6_6abkc"]
+[ext_resource type="PackedScene" uid="uid://caykiuhlew364" path="res://prefabs/enemy.tscn" id="7_7y5xw"]
+[ext_resource type="Script" path="res://scripts/ThisIsNotRight.gd" id="8_8g8bw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_krff7"]
+font_size = 52
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvx33"]
+radius = 25.1794
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6qu5"]
+font_size = 45
+
+[node name="Main" type="Node2D"]
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(269.5, 481)
+scale = Vector2(0.271973, 0.632813)
+texture = ExtResource("1_wof58")
+metadata/_edit_lock_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 77.0
+offset_right = 541.0
+offset_bottom = 152.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_krff7")
+horizontal_alignment = 1
+script = ExtResource("2_iew4o")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(286, 883)
+script = ExtResource("3_g7kvt")
+laser_tscn = ExtResource("4_k2r5d")
+metadata/_edit_group_ = true
+
+[node name="ShipGraphic" type="Sprite2D" parent="Player"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_oqryu")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_qvx33")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("6_6abkc")
+enemy_tscn = ExtResource("7_7y5xw")
+
+[node name="Timer" type="Timer" parent="EnemySpawner"]
+autostart = true
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_top = 1.0
+offset_right = 539.0
+offset_bottom = 962.0
+text = "GAME OVER
+
+Press enter to restart"
+label_settings = SubResource("LabelSettings_r6qu5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_8g8bw")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="spawn_enemy_ship"]

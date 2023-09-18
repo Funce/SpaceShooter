@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bakstkfpg63yd"]
+
+[ext_resource type="Texture2D" uid="uid://b2h04er4cfbsq" path="res://space_background_by_westbeam.png" id="1_kndno"]
+[ext_resource type="Script" path="res://scripts/StartButton.gd" id="2_anuvh"]
+[ext_resource type="PackedScene" uid="uid://8ecpp7c48mtk" path="res://main.tscn" id="3_4kcne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bno0w"]
+font_size = 50
+
+[node name="StartScreen" type="Node2D"]
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(269.5, 481)
+scale = Vector2(0.271973, 0.632813)
+texture = ExtResource("1_kndno")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_top = 311.0
+offset_right = 541.0
+offset_bottom = 576.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Space Shooter"
+label_settings = SubResource("LabelSettings_bno0w")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 50
+text = "START"
+script = ExtResource("2_anuvh")
+main_tscn = ExtResource("3_4kcne")
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StartButton" to="MarginContainer/VBoxContainer/HBoxContainer/StartButton" method="_on_pressed"]
